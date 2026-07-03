@@ -4,87 +4,34 @@
     <title>Notes API</title>
 
     <style>
-        body{
-            font-family: Arial, sans-serif;
-            background:#f4f4f4;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-        }
-
-        .card{
-            background:white;
-            padding:40px;
-            border-radius:12px;
-            text-align:center;
-            box-shadow:0 0 15px rgba(0,0,0,0.1);
-        }
-
-        h1{
-            margin-bottom:10px;
-        }
-
-        p{
-            color:gray;
-        }
-
-        a{
-            text-decoration:none;
-        }
-
-        button{
-            width:200px;
-            padding:10px;
-            margin:10px;
-            border:none;
-            border-radius:6px;
-            cursor:pointer;
-            font-size:16px;
-        }
-
-        .register{
-            background:#4CAF50;
-            color:white;
-        }
-
-        .api{
-            background:#2196F3;
-            color:white;
-        }
-
-        .admin{
-            background:#ff9800;
-            color:white;
-        }
+        body { font-family: sans-serif; max-width: 640px; margin: 50px auto; padding: 20px; background: #f4f4f9; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; margin: 0 0 8px 0; }
+        p { text-align: center; color: #666; margin: 0 0 18px 0; }
+        .actions { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+        a { width: 100%; max-width: 320px; }
+        button { width: 100%; padding: 12px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        .primary { background: #007bff; color: white; }
+        .success { background: #28a745; color: white; }
+        .warning { background: #ff9800; color: white; }
+        .small { font-size: 14px; color: #777; text-align: center; margin-top: 10px; }
     </style>
 </head>
 
 <body>
 
-<div class="card">
+    <div class="card">
+        <h1>Notes API 🚀</h1>
+        <p>Production-ready Django REST API — quick links below.</p>
 
-    <h1>Notes API 🚀</h1>
+        <div class="actions">
+            <a href="auth-page/"><button class="success">Register / Login</button></a>
+            <a href="/api/"><button class="primary">API Explorer</button></a>
+            <a href="/admin/"><button class="warning">Admin Panel</button></a>
+        </div>
 
-    <p>Production Ready Django REST API</p>
-
-    <a href="auth-page/">
-        <button class="auth-page">Register</button>
-    </a>
-
-    <br>
-
-    <a href="/api/">
-        <button class="api">API Explorer</button>
-    </a>
-
-    <br>
-
-    <a href="/admin/">
-        <button class="admin">Admin Panel</button>
-    </a>
-
-</div>
+        <div class="small">Use the Register button to open the auth page.</div>
+    </div>
 
 </body>
 </html>
