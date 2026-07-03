@@ -166,7 +166,8 @@
 
                 message.innerText = 'Registration submitted. You can now login.';
                 message.classList.add('success');
-                toggleView('login' , 'href="/api/login/"');
+                toggleView('login');
+                toggleView('href= "/api/"');
             } catch (error) {
                 message.innerText = 'Network error during registration.';
                 message.classList.add('error');
