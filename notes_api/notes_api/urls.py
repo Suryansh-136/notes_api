@@ -9,17 +9,13 @@ urlpatterns = [
     #api notes
     path('api/', include('notes.urls')),
 
-     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 
-     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
-     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-
-    #api djoser
-    # path('auth/', include('djoser.urls')),       # Register: /auth/users/
-    # path('auth/', include('djoser.urls.jwt')),   # Login: /auth/jwt/create/
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     #api HTML page
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('auth-page/',TemplateView.as_view(template_name='auth.html'),name='auth-page'),
-
 ]
