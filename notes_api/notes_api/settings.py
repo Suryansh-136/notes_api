@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'django_filters',
+    'drf_yasg'
     #'djoser'
     
 ]
@@ -112,23 +113,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'notes_api.wsgi.application'
 
 
-
 #https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-# Database for local development
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# Database configuration for production using dj_database_url
-DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get('DATABASE_URL')
-    )
-}
+# Databases
+# Use PostgreSQL for production development
+if os.environ.get('DATABASE_URL'):
+    DATABASES = {
+        'default': dj_database_url.parse(
+            os.environ.get('DATABASE_URL')
+        )
+    }
+else:
+    # Use SQLite for local development
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
